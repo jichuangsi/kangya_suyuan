@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Login from '@/initial/Login'
 import Index from '@/initial/Index'
 import Set from '@/initial/Set'
 import SetBluetooth from '@/initial/SetBluetooth'
@@ -26,6 +27,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/Index',
       name: 'Index',
       component: Index
     },

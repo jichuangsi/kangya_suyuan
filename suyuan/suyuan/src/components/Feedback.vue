@@ -39,19 +39,25 @@
         <div class="box" v-if="check_num==0">
             <div class="li" @click.stop="CheckVideo">选择视频</div>
             <div class="li" @click.stop="ShootVideo">拍摄视频</div>
+            <div class="li" v-if="file!=''" @click.stop="show1=true;show=false">预览</div>
         </div>
         <div class="box" v-if="check_num==1">
             <div class="li" @click.stop="CheckImg">选择图片</div>
             <div class="li" @click.stop="ShootImg">拍摄图片</div>
+            <div class="li" v-if="file!=''" @click.stop="show1=true;show=false">预览</div>
         </div>
         <div class="box" v-if="check_num==2">
             <!-- <div class="li">选择录音</div> -->
             <div class="li" @click.stop="Sound">录制录音</div>
         </div>
     </div>
-    <!-- <div class="shwo1" v-if="uploadbtn">
-        <div class="quan"><em></em></div>
-    </div> -->
+    <div class="show1" v-if="show1">
+      <i class="el-icon-close" @click="show1=false"></i>
+       <div class="box">
+         <video controls="controls" autoplay="autoplay" :src="file" v-if="check_num==0"></video>
+         <img :src="file" v-if="check_num==1" alt="">
+       </div>
+    </div>
   </div>
 </template>
 
@@ -73,7 +79,8 @@ export default {
       show:false,
       file:'',
       ready:false,
-      uploadbtn:true
+      uploadbtn:true,
+      show1:false
     }
   },
   mounted () {
@@ -501,12 +508,15 @@ export default {
             font-family:Source Han Sans CN;
             font-weight:400;
             color:rgba(36,37,37,1);
-            .li:first-child {
+            .li {
                 border-bottom: 1px solid rgba(165,165,165,1);
+            }
+            .li:last-child {
+                border-bottom: none;
             }
         }
     }
-    .shwo1 {
+    .show1 {
         position: fixed;
         top: 0px;
         left: 0px;
@@ -516,32 +526,31 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 1);
-        .quan {
-            width: 100px;
-            height: 100px;
-            border: 5px solid #fff;
-            border-radius: 50%;
-            position: relative;
-            animation: quan 1s linear infinite;
-            em {
-                display: block;
-                width: 30px;
-                height: 30px;
-                background-color: rgba(0, 0, 0, 1);
-                position: absolute;
-                left: 0px;
-                top: 0px;
-            }
+        background-color: rgba(0, 0, 0, 0.5);
+        .box {
+          width: 80%;
+          height: 80%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: auto;
         }
-    }
-}
-@keyframes quan {
-    0% {
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
+        img {
+          width: 100%;
+        }
+        video {
+          width: 100%;
+          height: 100%;
+          background-color: #000;
+        }
+        .el-icon-close {
+          font-size: 56px;
+          font-weight: 600;
+          color: #fff;
+          position:absolute;
+          right: 40px;
+          top: 40px;
+        }
     }
 }
 </style>

@@ -4,12 +4,24 @@
     <!-- <div @click="go">回收</div> -->
     <div class="center">
       <div class="box">
-        <div class="recovery" @click="go('recovery')"></div>
-        <div class="clean" @click="go('clean')"></div>
-        <div class="pack" @click="go('pack')"></div>
-        <div class="guidance" @click="go('guidance')"></div>
-        <div class="inspection" @click="go('inspection')"></div>
-        <div class="sterilization" @click="go('sterilization')"></div>
+        <div class="recovery" @click="go('recovery')">
+          <img v-show="false" src="../assets/images/组16.png">
+        </div>
+        <div class="clean" @click="go('clean')">
+          <img v-show="false" src="../assets/images/组17.png">
+        </div>
+        <div class="pack" @click="go('pack')">
+          <img v-show="false" src="../assets/images/组18.png">
+        </div>
+        <div class="guidance" @click="go('guidance')">
+          <img v-show="false" src="../assets/images/组21.png">
+        </div>
+        <div class="inspection" @click="go('inspection')">
+          <img v-show="false" src="../assets/images/组20.png">
+        </div>
+        <div class="sterilization" @click="go('sterilization')">
+          <img v-show="false" src="../assets/images/组19.png">
+        </div>
       </div>
       <div class="messages_box">
         <div class="recovery_box m_box">
