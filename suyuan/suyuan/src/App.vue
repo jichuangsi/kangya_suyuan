@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted() {
+    document.addEventListener("deviceready", function () {
+      navigator.splashscreen.hide();
+    }, false);
+  }
 }
 </script>
 
