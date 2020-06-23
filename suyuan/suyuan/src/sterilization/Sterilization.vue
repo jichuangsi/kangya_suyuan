@@ -148,14 +148,34 @@
         </div>
       </div>
       <div class="show_box4" v-if="shownum == 2" @click.stop="">
+        <div class="title_box">
+          <div class="t_title">灭菌参数</div>
+          <div class="t_li">
+            <div>灭菌炉批次号：</div>
+            <div>MJL-01-001</div>
+          </div>
+          <div class="t_li">
+            <div>灭菌炉号：</div>
+            <div>01</div>
+          </div>
+          <div class="t_li">
+            <div>压力蒸汽灭菌化学指示卡：</div>
+            <div>附件</div>
+          </div>
+          <div class="t_li">
+            <div>压力蒸汽灭生物培养指示剂编号：</div>
+            <div>MJL-01-001</div>
+          </div>
+        </div>
         <div class="box">
           <div class="t_box">
             <table>
               <thead>
                 <tr>
-                  <th>序号</th>
-                  <th>消毒包名称</th>
-                  <th>数量</th>
+                  <th>器械包名称</th>
+                  <th>总量</th>
+                  <th>合格</th>
+                  <th>不合格</th>
                   <th>备注</th>
                 </tr>
               </thead>
@@ -164,9 +184,10 @@
               <table>
                 <tbody>
                   <tr v-for="(item,index) in details_arr" :key="index">
-                    <td>{{item.index}}</td>
-                    <td>{{item.num}}</td>
                     <td>{{item.name}}</td>
+                    <td>{{item.num}}</td>
+                    <td>{{item.num}}</td>
+                    <td>{{item.num}}</td>
                     <td>{{item.mark}}</td>
                   </tr>
                 </tbody>
@@ -175,8 +196,8 @@
           </div>
         </div>
         <div class="s_btn">
-            <span>共选择消毒包：50</span>
             <div @click.stop="show=false">确定</div>
+            <div @click.stop="show=false">取消</div>
         </div>
       </div>
     </div>
@@ -919,10 +940,30 @@ export default {
       }
     }
     .show_box4 {
-        width:1128px;
-        height:582px;
+        width:70%;
+        height:80%;
         background:rgba(255,255,255,1);
         padding: 40px;
+        .title_box {
+          .t_title {
+            font-size:38px;
+            font-family:Source Han Sans CN;
+            font-weight:400;
+            color:rgba(0,170,164,1);
+            line-height: 76px;
+          }
+          .t_li {
+            font-size:34px;
+            font-family:Source Han Sans CN;
+            font-weight:400;
+            line-height: 66px;
+            display: flex;
+            justify-content: space-between;
+            div:last-child{
+              color:rgba(0,170,164,1);
+            }
+          }
+        }
         .box {
             width: 100%;
             height: 308px;
