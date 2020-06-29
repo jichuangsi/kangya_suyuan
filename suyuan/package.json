@@ -21,7 +21,9 @@
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-media": "^5.0.3",
     "cordova-plugin-media-capture": "^3.0.3",
+    "cordova-plugin-screen-orientation": "^3.0.2",
     "cordova-plugin-splashscreen": "^5.0.4",
+    "es6-promise-plugin": "^4.2.2",
     "phonegap-plugin-barcodescanner": "8.1.0"
   },
   "devDependencies": {
@@ -43,7 +45,8 @@
       "cordova-plugin-media-capture": {},
       "cordova-plugin-device": {},
       "cordova-plugin-android-permissions": {},
-      "cordova-plugin-splashscreen": {}
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-screen-orientation": {}
     },
     "platforms": [
       "android",

@@ -20,13 +20,31 @@ import Clean from '@/clean/Clean'
 import C_recovery from '@/clean/C_recovery'
 import Feedback from '@/components/Feedback'
 import Top from '@/components/Top'
+// 手机端
+import MLogin from '@/initial/MLogin'
+import MIndex from '@/initial/MIndex'
+import MSet from '@/initial/MSet'
+import MSetBluetooth from '@/initial/MSetBluetooth'
+import MRecovery from '@/recovery/MRecovery'
+import MLoss from '@/recovery/MLoss'
+import MClean from '@/clean/MClean'
+import MPack from '@/pack/MPack'
+import MPacking from '@/pack/MPacking'
+import Msterilization from '@/sterilization/Msterilization'
+import MInspection from '@/inspection/MInspection'
+import MGuidance from '@/guidance/MGuidance'
+import MG_into from '@/guidance/MG_into'
+import MTop from '@/components/MTop'
+import MFeedback from '@/components/MFeedback'
+
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/Login',
       name: 'Login',
       component: Login
     },
@@ -141,6 +159,87 @@ export default new Router({
       path: '/Top',
       name: 'Top',
       component: Top
+    },
+    //手机端
+    {
+      path: '/MLogin',
+      name: 'MLogin',
+      component: MLogin
+    },
+    {
+      path: '/MIndex',
+      name: 'MIndex',
+      component: MIndex
+    },
+    {
+      path: '/MSet',
+      name: 'MSet',
+      component: MSet
+    },
+    {
+      path: '/MSetBluetooth',
+      name: 'MSetBluetooth',
+      component: MSetBluetooth
+    },
+    {
+      path: '/MFeedback',
+      name: 'MFeedback',
+      component: MFeedback
+    },
+    {
+      path: '/MTop',
+      name: 'MTop',
+      component: MTop
+    },
+    {
+      path: '/MRecovery',
+      name: 'MRecovery',
+      component: MRecovery
+    },
+    {
+      path: '/MLoss',
+      name: 'MLoss',
+      component: MLoss
+    },
+    {
+      path: '/MClean',
+      name: 'MClean',
+      component: MClean
+    },
+    {
+      path: '/MPack',
+      name: 'MPack',
+      component: MPack
+    },
+    {
+      path: '/MPacking',
+      name: 'MPacking',
+      component: MPacking
+    },
+    {
+      path: '/Msterilization',
+      name: 'Msterilization',
+      component: Msterilization
+    },
+    {
+      path: '/Msterilization',
+      name: 'Msterilization',
+      component: Msterilization
+    },
+    {
+      path: '/MInspection',
+      name: 'MInspection',
+      component: MInspection
+    },
+    {
+      path: '/MGuidance',
+      name: 'MGuidance',
+      component: MGuidance
+    },
+    {
+      path: '/MG_into',
+      name: 'MG_into',
+      component: MG_into
     }
   ]
 })
